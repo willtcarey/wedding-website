@@ -330,15 +330,14 @@
     </div>-->
 </section>
 
-<section id="video-bg" class="hidden-sm hidden-xs">
+<!-- <section id="video-bg" class="hidden-sm hidden-xs">
     <div id="bgndVideo" class="player"
-         data-property="{videoURL:'https://youtu.be/9giqL1H6yRs',containment:'#video-bg',autoPlay:true, mute:true, showControls:false, startAt:80, stopAt:259, opacity:1}">
+         data-property="{videoURL:'https://www.youtube.com/watch?v=Li9y9ZgdkPc',containment:'#video-bg',autoPlay:true, mute:true, showControls:false, startAt:0, opacity:1}">
     </div>
     <div id="video-content">
-        <h5>Kolkata</h5>
-        <p>City of joy</p>
+        <h5>Santa Clara</h5>
     </div>
-</section>
+</section> -->
 
 <section id="map" class="section-padding">
     <div class="text-center">
@@ -356,14 +355,9 @@
                 </div>
                 <div id="map-content" class="pointer-events-auto">
                     <div class="row">
-                        <div class="col-md-6">
-                            <h5>ITC Fortune Park</h5>
-                            <p>Kona Expressway, Howrah, West Bengal 711403, India</p>
-                        </div>
-                        <div class="col-md-6">
-                            <h5>Mr. Amit Roy</h5>
-                            <p><i class="fa fa-mobile"></i> <a href="tel://+919412345678">+91 9412345678</a><br>
-                                <i class="fa fa-mobile"></i> <a href="tel://+917123456789">+91 7123456789</a></p>
+                        <div class="col-md-12">
+                            <h5>Jamison Brown House</h5>
+                            <p>1507 Warburton Ave, Santa Clara, CA 95050</p>
                         </div>
                     </div>
                     <div class="row text-center">
@@ -405,43 +399,61 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <h3>What are you waiting for?</h3>
-                <p>We would greatly appreciate if you could RSVP before 1st of November '17</p>
+                <p>We would greatly appreciate if you could RSVP before August 31st</p>
+                <!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeVA5dzBTC6LssVJ6bh53k9iccUfbfVu899ERn_4m5bCxx03Q/viewform?embedded=true" height="768" class="rsvp-iframe" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> -->
                 <form id="rsvp-form" class="rsvp-form"
                       action=""
                       method="POST">
                     <div class="row">
-                        <div class="col-md-6 col-sm-6">
+                        <div class="col-sm-12">
                             <div class="form-input-group">
                                 <i class="fa fa-envelope"></i><input type="email" name="email" class=""
                                                                      placeholder="Your email"
                                                                      required>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-user"></i><input name="name" class=""
-                                                                 placeholder="Your name"
-                                                                 required>
-                            </div>
+                        <label>Names of people attending in your party</label>
+                        <div class="col-sm-12">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>CA wedding + reception</th>
+                                        <th>KS open house</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="names">
+                                    
+                                </tbody>
+                            </table>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-users"></i><input type="number" name="extras" class="" min="0"
-                                                                  max="4"
-                                                                  placeholder="Husband/Wife or kids"
-                                                                  required>
-                            </div>
+
+                        <template id="rsvp-template">
+                            <tr>
+                                <td><div class="form-input-group"><i class="fa fa-user"></i><input name="rsvp[{{index}}][name]" placeholder="Name"></div></td>
+                                <td>
+                                    <input name="rsvp[{{index}}][attend_california]" type="hidden" value="0"/>
+                                    <input name="rsvp[{{index}}][attend_california]" type="checkbox" value="1" />
+                                </td>
+                                <td>
+                                    <input name="rsvp[{{index}}][attend_kansas]" type="hidden" value="0" />
+                                    <input name="rsvp[{{index}}][attend_kansas]" type="checkbox" value="1" />
+                                </td>
+                            </tr>
+                        </template>
+                        
+                        <div class="col-sm-12">
+                            <button type="button" class="add-name-button btn-fill">+ Add name</button>
                         </div>
-                        <div class="col-md-6 col-sm-6">
+                        
+                        <!-- div class="col-sm-12">
                             <div class="form-input-group">
                                 <i class="fa fa-key"></i><input type="number" name="invite_code" id="invite_code"
                                                                 class="" min="0"
                                                                 placeholder="Invite code"
                                                                 required>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="row">
                         <div class="col-md-12" id="alert-wrapper"></div>
@@ -472,20 +484,20 @@
 <script src="js/jquery.fancybox.pack.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/jquery.flexslider-min.js"></script>
-<script src="js/jquery.mb.YTPlayer.min.js"></script>
+<!-- <script src="js/jquery.mb.YTPlayer.min.js"></script> -->
 <script src="node_modules/waypoints/lib/jquery.waypoints.min.js"></script>
 <script src="js/vendor/ouical.js"></script>
 <script src="js/scripts.min.js"></script>
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlPw3GQYI3faa_9mRE6plWuM7xNEmrwH0&callback=initMap"></script>
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnaakfUleyo-KYQSuJEATzHoIydXz3v3U&callback=initMap"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140795265-1"></script>
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140795265-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'UA-140795265-1');
-</script>
+</script> -->
 </body>
 </html>
