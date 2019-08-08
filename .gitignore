@@ -35,4 +35,5 @@ typings/
 .env
 .sass-cache/
 *.css.map
-node_modules/*
+node_modules/gulp
+node_modules/.bin/gulp
