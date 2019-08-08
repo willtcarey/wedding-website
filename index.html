@@ -26,7 +26,6 @@
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/jquery.fancybox.css">
-    <link rel="stylesheet" href="css/flexslider.css">
     <link rel="stylesheet" href="css/styles.min.css">
     <link rel="stylesheet" href="css/queries.css">
     <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
@@ -397,10 +396,9 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-8 col-md-offset-2">
                 <h3>What are you waiting for?</h3>
                 <p>We would greatly appreciate if you could RSVP before August 31st</p>
-                <!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeVA5dzBTC6LssVJ6bh53k9iccUfbfVu899ERn_4m5bCxx03Q/viewform?embedded=true" height="768" class="rsvp-iframe" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> -->
                 <form id="rsvp-form" class="rsvp-form"
                       action=""
                       method="POST">
@@ -412,19 +410,28 @@
                                                                      required>
                             </div>
                         </div>
-                        <label>Names of people attending in your party</label>
+                        <label>Attendees</label>
                         <div class="col-sm-12">
-                            <table>
+                            <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>Name</th>
-                                        <th>CA wedding + reception</th>
-                                        <th>KS open house</th>
+                                        <th></th>
+                                        <th>CA wedding + reception (Oct. 12th)</th>
+                                        <th>KS reception (Oct. 26th)</th>
                                     </tr>
                                 </thead>
                                 <tbody class="names">
                                     
                                 </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td>
+                                            <button type="button" class="btn add-name-button">+ Add name</button>
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tfoot>
                             </table>
                         </div>
 
@@ -432,19 +439,31 @@
                             <tr>
                                 <td><div class="form-input-group"><i class="fa fa-user"></i><input name="rsvp[{{index}}][name]" placeholder="Name"></div></td>
                                 <td>
-                                    <input name="rsvp[{{index}}][attend_california]" type="hidden" value="0"/>
-                                    <input name="rsvp[{{index}}][attend_california]" type="checkbox" value="1" />
+                                    <label class="custom-toggle">
+                                        <input name="rsvp[{{index}}][attend_california]" type="radio" value="1"/>
+                                        <div class="btn btn-yes">Yes</div>
+                                    </label>
+                                    <label class="custom-toggle">
+                                        <input name="rsvp[{{index}}][attend_california]" type="radio" value="0" />
+                                        <div class="btn btn-no">No</div>
+                                    </label>
                                 </td>
                                 <td>
-                                    <input name="rsvp[{{index}}][attend_kansas]" type="hidden" value="0" />
-                                    <input name="rsvp[{{index}}][attend_kansas]" type="checkbox" value="1" />
+                                    <label class="custom-toggle">
+                                        <input name="rsvp[{{index}}][attend_kansas]" type="radio" value="1"/>
+                                        <div class="btn btn-yes">Yes</div>
+                                    </label>
+                                    <label class="custom-toggle">
+                                        <input name="rsvp[{{index}}][attend_kansas]" type="radio" value="0" />
+                                        <div class="btn btn-no">No</div>
+                                    </label>
                                 </td>
                             </tr>
                         </template>
                         
-                        <div class="col-sm-12">
+                        <!-- <div class="col-sm-12">
                             <button type="button" class="add-name-button btn-fill">+ Add name</button>
-                        </div>
+                        </div> -->
                         
                         <!-- div class="col-sm-12">
                             <div class="form-input-group">
@@ -483,7 +502,6 @@
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 <script src="js/jquery.fancybox.pack.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
-<script src="js/jquery.flexslider-min.js"></script>
 <!-- <script src="js/jquery.mb.YTPlayer.min.js"></script> -->
 <script src="node_modules/waypoints/lib/jquery.waypoints.min.js"></script>
 <script src="js/vendor/ouical.js"></script>

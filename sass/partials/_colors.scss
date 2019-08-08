@@ -1,5 +1,8 @@
 // Colours partial
 
+// orange #af3825
+// blue #172e60
+
 // Text colours
 $txt-primary: rgba(28, 54, 83, 0.6);
 // body font
@@ -11,9 +14,9 @@ $txt-accent: #ACB1B4;
 $form-placeholder: #BCC1C3;
 // form placeholder text
 // Global colours
-$accent-color: #203ec7;
+$accent-color: #af3825;
 // global accent colour
-$accent-color-hover: #142c99;
+$accent-color-hover: darken($accent-color, 10%);
 // global accent colour hover
 $white-color: #fff;
 $black-color: #000;
