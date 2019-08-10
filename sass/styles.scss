@@ -293,7 +293,7 @@ Hero
 }
 .fixed {
   position: fixed;
-  background-color: #af3825;
+  background-color: #172e60;
   z-index: 999;
   width: 100%;
 }
@@ -335,9 +335,9 @@ header {
           color: $accent-color;
         }
       }
-      &:last-child a {
-        padding-right: 0px;
-      }
+      // &:last-child a {
+      //   padding-right: 0px;
+      // }
     }
   }
   ul.member-actions {
