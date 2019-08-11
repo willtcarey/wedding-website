@@ -331,6 +331,14 @@ header {
         color: $txt-light;
         padding-right: 25px;
 
+        @media (max-width: 991px) {
+          padding-right: 0;
+        }
+
+        &.btn-small {
+          padding-right: 30px;
+        }
+
         &:hover {
           color: $accent-color;
         }

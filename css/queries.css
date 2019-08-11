@@ -97,10 +97,6 @@
         text-align: center;
     }
 
-    nav ul.primary-nav li a {
-        padding-right: 0;
-    }
-
     nav .member-actions {
         position: static;
         padding: 0;
