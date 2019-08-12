@@ -33,6 +33,13 @@ $responsive-h1: 40px;
 
 $base-line-height: 29px;
 
+// Fonts
+
+@font-face {
+  font-family: "Belinda";
+  src: url("/fonts/belinda.otf") format("opentype");
+}
+
 // Styles
 
 /* ==========================================================================
@@ -73,4 +80,8 @@ h5 {
   color: $h5-color;
   text-transform: uppercase;
   font-weight: $semibold;
+}
+
+.script-font {
+  font-family: "Belinda", cursive;
 }
