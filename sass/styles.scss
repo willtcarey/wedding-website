@@ -943,6 +943,12 @@ RSVP form
 }
 
 .custom-toggle {
+  display: inline;
+
+  @media (max-width: 480px) {
+    display: block;
+  }
+
   input[type="radio"] {
     display: none;
 
