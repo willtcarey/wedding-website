@@ -728,6 +728,12 @@ Engagement Pics
     top: 75%;
     z-index: -1;
   }
+
+  .engagement-photos-row {
+    .col-xs-2 {
+      margin-bottom: 1em;
+    }
+  }
 }
 
 /* ==========================================================================
