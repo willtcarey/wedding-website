@@ -197,12 +197,25 @@ $(document).ready(function () {
         e.preventDefault();
         // var data = $(this).serialize()
         var object = $(this).serializeObject()
-        var data = { data: JSON.stringify(object) }
+        var rsvps = []
+        if (!object.rsvp) { return }
+        for(var i = 0; i < object.rsvp.length; i++) {
+            var rsvp = object.rsvp[i]
+            if (!rsvp.name || rsvp.name == "") { continue }
+            rsvps.push({
+                email: object.email,
+                name: rsvp.name,
+                attend_california: rsvp.attend_california,
+                attend_kansas: rsvp.attend_kansas
+            })
+        }
+        var data = { data: JSON.stringify(rsvps) }
         console.log(object)
 
         $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
 
-        $.post('https://script.google.com/macros/s/AKfycbwh9jdjwx6NFgQu91-B_mflprlV6cAXuFGs9LtdrFU5SWGYOLc/exec', data)
+        // $.post('https://script.google.com/macros/s/AKfycbwh9jdjwx6NFgQu91-B_mflprlV6cAXuFGs9LtdrFU5SWGYOLc/exec', data)
+        $.post('https://hooks.zapier.com/hooks/catch/5595696/obnw1gl/', data)
             .done(function (data) {
                 console.log(data);
                 $('#alert-wrapper').html('');
